@@ -1338,13 +1338,16 @@ def _detect_face_crop(frame_path, width, height, top_height=TOP_PANEL_HEIGHT):
         return None
     _, _, center_x, center_y, face_w, face_h = max(usable, key=lambda item: item[0])
     ratio = 1080.0 / float(top_height)
-    crop_h = max(face_h * 2.4, face_w * 2.0)
-    crop_h = min(height * 0.35, crop_h)
-    crop_w = min(width * 0.42, crop_h * ratio)
-    crop_w = max(width * 0.28, crop_w)
-    crop_w = min(width * 0.45, crop_w)
+    face_center_x = center_x
+    face_center_y = center_y
+    shift_x = face_w * 0.1 if face_center_x < width / 2 else -face_w * 0.1
+    shift_y = face_h * 0.6 if face_center_y > height * 0.40 else -face_h * 0.6
+    center_x = face_center_x + shift_x
+    center_y = face_center_y + shift_y
+    crop_w = min(width * 0.45, face_w * 5.0)
+    crop_h = crop_w / ratio
     crop_w = max(2, int(crop_w) - int(crop_w) % 2)
-    crop_h = max(2, int(crop_w / ratio) - int(crop_w / ratio) % 2)
+    crop_h = max(2, int(crop_h) - int(crop_h) % 2)
     x = int(max(0, min(width - crop_w, center_x - crop_w / 2)))
     y = int(max(0, min(height - crop_h, center_y - crop_h / 2)))
     return f"crop={crop_w}:{crop_h}:{x}:{y}"
