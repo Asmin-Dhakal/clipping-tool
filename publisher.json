@@ -1,0 +1,64 @@
+{
+  "clips_dir": "clips",
+  "state_db": "clips/.publisher.sqlite3",
+  "log_file": "publisher.log",
+  "watch_interval": 10,
+  "defaults": {
+    "platforms": [
+      "youtube"
+    ],
+    "privacy": "unlisted",
+    "category_id": "20",
+    "language": "en",
+    "made_for_kids": false,
+    "game": "GTA 6",
+    "hashtags": [
+      "#GTA6",
+      "#GTA6Clips",
+      "#YouTubeShorts",
+      "#Gaming",
+      "#FunnyMoments",
+      "#ViralShorts",
+      "#Shorts"
+    ],
+    "title_template": "{streamer} Goes CRAZY Over {game} 😂🔥 #shorts",
+    "description_template": "{streamer}'s reaction to {game} is absolutely INSANE! 😂🔥 From crazy moments to hilarious reactions, {streamer} never disappoints!\n\nGet ready for the funniest and most entertaining {streamer} {game} moments.\n\nSubscribe for more daily {streamer} clips, {game} moments, funny reactions, and viral gaming highlights!\n\n🎮 Featuring: {streamer}\n🔥 Game: {game}\n\n{hashtags}",
+    "max_title": 100,
+    "max_description": 5000,
+    "max_tags": 15,
+    "upload_captions": true,
+    "max_daily_uploads": 100,
+    "retry_backoff_base": 30,
+    "retry_backoff_max": 300
+  },
+  "streamers": {
+    "kaicenat": {
+      "display_name": "Kai Cenat",
+      "hashtags": [
+        "#KaiCenat"
+      ],
+      "webcam_crop": ""
+    },
+    "ishowspeed": {
+      "display_name": "IShowSpeed",
+      "hashtags": [
+        "#IShowSpeed"
+      ],
+      "webcam_crop": ""
+    },
+    "yt_qSyo5d-dVzA": {
+      "display_name": "IShowSpeed",
+      "hashtags": [
+        "#IShowSpeed"
+      ],
+      "webcam_crop": ""
+    }
+  },
+  "youtube": {
+    "client_secret": "~/.config/clip-publisher/client_secret.json",
+    "token": "~/.config/clip-publisher/token.json",
+    "privacy": "unlisted",
+    "category_id": "20",
+    "upload_captions": true
+  }
+}
