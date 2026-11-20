@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+client_secret*.json
+*token*.json
+*.log
+logs/
+clips/
+.dashboard_processes.json
+.DS_Store
